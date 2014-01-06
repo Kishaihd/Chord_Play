@@ -1,4 +1,4 @@
-# Chord Play
+Chord Blaster
+======
 
-## A Polymer Dart program for practicing music! 
-##### Randomly displays different chords in accordance with a timer.
+A Polymer Dart program to assist with guitar chord practice.
