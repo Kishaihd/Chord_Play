@@ -48,7 +48,10 @@ class HTMLSlideshow extends PolymerElement {
     }
 
     // immediately show next slide
-    nextSlide();
+    // Without this, there will be a delay equal to the interval, before first slide is shown.
+    // This is because iterators start at -1, so that when it goes to 0, it shows
+    // the 0th element of whatever we're running through the slide show.
+//    nextSlide();
 
     // start the timer
     _timer = new Timer.periodic(_duration, nextSlide);
@@ -69,7 +72,7 @@ class HTMLSlideshow extends PolymerElement {
 
   void reset() {
     // reset the iterator to the beginning of the slide list and kill the current slide (if any)
-    if (slides != null && slides.length > 0) {
+    if (slides != null && slides.isNotEmpty) {
       _iterator = slides.iterator;
       currentSlide = null;
     }
